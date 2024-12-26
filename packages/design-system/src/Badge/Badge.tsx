@@ -1,6 +1,4 @@
-import React from 'react';
-
-interface BadgeProps {
+export interface BadgeProps {
   value: string;
 }
 
