@@ -9,7 +9,7 @@
   },
   "exports": {
     "./badge": {
-      "types": "./src/badge.tsx",
+      "types": "./src/Badge/Badge.tsx",
       "default": "./dist/badge.js"
     }
   },
