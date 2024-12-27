@@ -1,14 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { composeStories } from '@storybook/react';
+import * as stories from './Button.stories.tsx';
 
-import { Button } from './Button.tsx';
+const { Primary } = composeStories(stories);
 
 test('loads and displays greeting', async () => {
   // ARRANGE
-  render(<Button label='Wow' />);
+  render(<Primary />);
 
   // ACT
 
   // ASSERT
   expect(screen.getByRole('button')).toBeInTheDocument();
+  expect(screen.getByRole('button')).toHaveTextContent('Wee');
 });
