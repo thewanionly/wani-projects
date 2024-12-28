@@ -5,13 +5,15 @@ import * as stories from './Badge.stories.tsx';
 
 const { Default } = composeStories(stories);
 
-it('displays Badge component', async () => {
-  // ARRANGE
-  const value = '27';
-  render(<Default>{value}</Default>);
+describe('Badge', () => {
+  it('displays Badge component', async () => {
+    // ARRANGE
+    const value = '27';
+    render(<Default>{value}</Default>);
 
-  // ACT
+    // ACT
 
-  // ASSERT
-  expect(screen.getByText(value)).toBeInTheDocument();
+    // ASSERT
+    expect(screen.getByText(value)).toBeInTheDocument();
+  });
 });
