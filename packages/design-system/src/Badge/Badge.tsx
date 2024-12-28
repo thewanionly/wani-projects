@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import '../styles';
+import '../styles/global.css';
 
 export interface BadgeProps {
   children: ReactNode;
