@@ -1,7 +1,6 @@
 import Image, { type ImageProps } from 'next/image';
 import { Button } from '@repo/ui/button';
 import styles from './page.module.css';
-import { Badge } from '@repo/design-system/Badge';
 
 type Props = Omit<ImageProps, 'src'> & {
   srcLight: string;
@@ -23,7 +22,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Badge value={'3'} />
         <ThemeImage
           className={styles.logo}
           srcLight='turborepo-dark.svg'
