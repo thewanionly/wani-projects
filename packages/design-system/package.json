@@ -5,7 +5,7 @@
     "dev": "tsc --watch",
     "build": "tsc",
     "test": "jest",
-    "test:dev": "jest --watch --verbose"
+    "test:watch": "jest --watch --verbose"
   },
   "exports": {
     "./badge": {
