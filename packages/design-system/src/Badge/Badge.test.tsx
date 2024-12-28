@@ -3,12 +3,12 @@ import { composeStories } from '@storybook/react';
 
 import * as stories from './Badge.stories.tsx';
 
-const { Primary } = composeStories(stories);
+const { Default } = composeStories(stories);
 
 it('displays Badge component', async () => {
   // ARRANGE
   const child = '27';
-  render(<Primary>{child}</Primary>);
+  render(<Default>{child}</Default>);
 
   // ACT
 
