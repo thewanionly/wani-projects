@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge, BadgeProps } from '@repo/design-system/badge';
+import { Badge, BadgeProps } from './Badge.tsx';
 
 const meta = {
   title: 'Example/Badge',
