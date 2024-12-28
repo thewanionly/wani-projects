@@ -1,7 +1,9 @@
+import { ReactNode } from 'react';
+
 export interface BadgeProps {
-  value: string;
+  children: ReactNode;
 }
 
-export const Badge = ({ value }: BadgeProps) => {
-  return <span>{value}</span>;
+export const Badge = ({ children }: BadgeProps) => {
+  return <span>{children}</span>;
 };

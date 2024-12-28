@@ -7,11 +7,11 @@ const { Primary } = composeStories(stories);
 
 it('displays Badge component', async () => {
   // ARRANGE
-  const value = '27';
-  render(<Primary value={value} />);
+  const child = '27';
+  render(<Primary>{child}</Primary>);
 
   // ACT
 
   // ASSERT
-  expect(screen.getByText(value)).toBeInTheDocument();
+  expect(screen.getByText(child)).toBeInTheDocument();
 });
