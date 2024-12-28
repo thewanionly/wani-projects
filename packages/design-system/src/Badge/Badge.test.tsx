@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import { composeStories } from '@storybook/react';
 import * as stories from './Badge.stories.tsx';
