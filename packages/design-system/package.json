@@ -8,10 +8,7 @@
     "test:watch": "jest --watch --verbose"
   },
   "exports": {
-    "./badge": {
-      "types": "./src/Badge/Badge.tsx",
-      "default": "./dist/badge.js"
-    }
+    "./Badge": "./src/Badge/Badge.tsx"
   },
   "dependencies": {
     "react": "^19.0.0",
