@@ -8,12 +8,11 @@ const { Default } = composeStories(stories);
 describe('Badge', () => {
   it('displays Badge component', async () => {
     // ARRANGE
-    const value = '27';
-    render(<Default>{value}</Default>);
+    render(<Default />);
 
     // ACT
 
     // ASSERT
-    expect(screen.getByText(value)).toBeInTheDocument();
+    expect(screen.getByText(Default.args.children as string)).toBeInTheDocument();
   });
 });
