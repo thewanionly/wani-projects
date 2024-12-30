@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import '../styles/global.css';
 import { cn } from '../utils/styling.ts';
 
-enum BadgeSize {
+export enum BadgeSize {
   Small = 'small',
   Medium = 'medium',
   Large = 'large'

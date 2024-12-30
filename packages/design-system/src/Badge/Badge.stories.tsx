@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Badge, BadgeProps } from './Badge.tsx';
+import { Badge, BadgeProps, BadgeSize } from './Badge.tsx';
 
 const meta = {
   title: 'Example/Badge',
@@ -14,5 +14,26 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'Default'
+  }
+};
+
+export const Small: Story = {
+  args: {
+    children: 'Small',
+    size: BadgeSize.Small
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    children: 'Medium',
+    size: BadgeSize.Medium
+  }
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Large',
+    size: BadgeSize.Large
   }
 };
