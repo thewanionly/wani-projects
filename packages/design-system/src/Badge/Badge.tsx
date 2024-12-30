@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import '../styles/global.css';
+import { cn } from '../utils/styling.ts';
 
 enum BadgeSize {
   Small = 'small',
@@ -22,13 +23,24 @@ export interface BadgeProps {
   children: ReactNode;
 }
 
+const BADGE_SIZE_MAP = {
+  [BadgeSize.Small]: 'text-xs leading-4 py-0.5 px-1.5',
+  [BadgeSize.Medium]: 'text-sm leading-5 py-0.5 px-2',
+  [BadgeSize.Large]: 'text-sm leading-5 py-1 px-2.5'
+};
+
 export const Badge = ({
   size = BadgeSize.Medium,
   variant = BadgeVariant.Neutral,
   children
 }: BadgeProps) => {
   return (
-    <span className='text-sm leading-5 text-neutral-600 border border-neutral-200 rounded-full py-0.5 px-2'>
+    <span
+      className={cn(
+        'rounded-full border border-neutral-200 text-neutral-600',
+        BADGE_SIZE_MAP[size]
+      )}
+    >
       {children}
     </span>
   );
