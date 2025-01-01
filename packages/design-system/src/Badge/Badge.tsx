@@ -31,10 +31,10 @@ const BADGE_SIZE_MAP = {
 
 const BADGE_VARIANT_MAP = {
   [BadgeVariant.Neutral]: 'text-neutral-600 bg-gray-50 border-neutral-200',
-  [BadgeVariant.Error]: 'text-neutral-600 bg-gray-50 border-neutral-200',
-  [BadgeVariant.Warning]: 'text-neutral-600 bg-gray-50 border-neutral-200',
-  [BadgeVariant.Success]: 'text-neutral-600 bg-gray-50 border-neutral-200',
-  [BadgeVariant.Brand]: 'text-neutral-600 bg-gray-50 border-neutral-200'
+  [BadgeVariant.Error]: 'text-red-600 bg-red-50 border-red-200',
+  [BadgeVariant.Warning]: 'text-amber-700 bg-amber-50 border-amber-200',
+  [BadgeVariant.Success]: 'text-green-700 bg-green-50 border-green-200',
+  [BadgeVariant.Brand]: 'text-indigo-700 bg-indigo-50 border-indigo-200'
 };
 
 export const Badge = ({
