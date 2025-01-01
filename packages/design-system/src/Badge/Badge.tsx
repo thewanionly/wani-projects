@@ -43,7 +43,13 @@ export const Badge = ({
   children
 }: BadgeProps) => {
   return (
-    <span className={cn('rounded-full border', BADGE_SIZE_MAP[size], BADGE_VARIANT_MAP[variant])}>
+    <span
+      className={cn(
+        'inline-block rounded-full border',
+        BADGE_SIZE_MAP[size],
+        BADGE_VARIANT_MAP[variant]
+      )}
+    >
       {children}
     </span>
   );
