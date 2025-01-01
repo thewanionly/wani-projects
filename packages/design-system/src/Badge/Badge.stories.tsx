@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Badge, BadgeProps, BadgeSize } from './Badge.tsx';
+import { Badge, BadgeProps, BadgeSize, BadgeVariant } from './Badge.tsx';
 
 const meta = {
   title: 'Example/Badge',
@@ -11,9 +11,38 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Neutral: Story = {
   args: {
-    children: 'Default'
+    children: 'Neutral',
+    variant: BadgeVariant.Neutral
+  }
+};
+
+export const Error: Story = {
+  args: {
+    children: 'Error',
+    variant: BadgeVariant.Error
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    children: 'Warning',
+    variant: BadgeVariant.Warning
+  }
+};
+
+export const Success: Story = {
+  args: {
+    children: 'Success',
+    variant: BadgeVariant.Success
+  }
+};
+
+export const Brand: Story = {
+  args: {
+    children: 'Brand',
+    variant: BadgeVariant.Brand
   }
 };
 

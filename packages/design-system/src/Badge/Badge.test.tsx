@@ -3,16 +3,16 @@ import { composeStories } from '@storybook/react';
 
 import * as stories from './Badge.stories.tsx';
 
-const { Default } = composeStories(stories);
+const { Neutral } = composeStories(stories);
 
 describe('Badge', () => {
   it('displays Badge component', async () => {
     // ARRANGE
-    render(<Default />);
+    render(<Neutral />);
 
     // ACT
 
     // ASSERT
-    expect(screen.getByText(Default.args.children as string)).toBeInTheDocument();
+    expect(screen.getByText(Neutral.args.children as string)).toBeInTheDocument();
   });
 });

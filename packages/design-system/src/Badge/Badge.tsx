@@ -9,11 +9,11 @@ export enum BadgeSize {
   Large = 'large'
 }
 
-enum BadgeVariant {
+export enum BadgeVariant {
   Neutral = 'neutral',
   Error = 'error',
   Warning = 'warning',
-  Successs = 'success',
+  Success = 'success',
   Brand = 'brand'
 }
 
@@ -33,7 +33,7 @@ const BADGE_VARIANT_MAP = {
   [BadgeVariant.Neutral]: 'text-neutral-600 bg-gray-50 border-neutral-200',
   [BadgeVariant.Error]: 'text-neutral-600 bg-gray-50 border-neutral-200',
   [BadgeVariant.Warning]: 'text-neutral-600 bg-gray-50 border-neutral-200',
-  [BadgeVariant.Successs]: 'text-neutral-600 bg-gray-50 border-neutral-200',
+  [BadgeVariant.Success]: 'text-neutral-600 bg-gray-50 border-neutral-200',
   [BadgeVariant.Brand]: 'text-neutral-600 bg-gray-50 border-neutral-200'
 };
 
