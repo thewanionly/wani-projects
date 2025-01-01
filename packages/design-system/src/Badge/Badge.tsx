@@ -17,13 +17,6 @@ export enum BadgeVariant {
   Brand = 'brand'
 }
 
-export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  size?: BadgeSize;
-  variant?: BadgeVariant;
-  children: ReactNode;
-  className?: string;
-}
-
 const BADGE_SIZE_MAP = {
   [BadgeSize.Small]: 'text-xs leading-4 py-0.5 px-1.5',
   [BadgeSize.Medium]: 'text-sm leading-5 py-0.5 px-2',
@@ -37,6 +30,13 @@ const BADGE_VARIANT_MAP = {
   [BadgeVariant.Success]: 'text-green-700 bg-green-50 border-green-200',
   [BadgeVariant.Brand]: 'text-indigo-700 bg-indigo-50 border-indigo-200'
 };
+
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  size?: BadgeSize;
+  variant?: BadgeVariant;
+  children: ReactNode;
+  className?: string;
+}
 
 export const Badge = ({
   size = BadgeSize.Medium,
