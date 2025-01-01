@@ -17,10 +17,11 @@ export enum BadgeVariant {
   Brand = 'brand'
 }
 
-export interface BadgeProps {
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   size?: BadgeSize;
   variant?: BadgeVariant;
   children: ReactNode;
+  className?: string;
 }
 
 const BADGE_SIZE_MAP = {
@@ -40,15 +41,19 @@ const BADGE_VARIANT_MAP = {
 export const Badge = ({
   size = BadgeSize.Medium,
   variant = BadgeVariant.Neutral,
-  children
+  children,
+  className,
+  ...props
 }: BadgeProps) => {
   return (
     <span
       className={cn(
         'inline-block rounded-full border',
         BADGE_SIZE_MAP[size],
-        BADGE_VARIANT_MAP[variant]
+        BADGE_VARIANT_MAP[variant],
+        className
       )}
+      {...props}
     >
       {children}
     </span>
