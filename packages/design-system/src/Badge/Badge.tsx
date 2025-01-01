@@ -29,18 +29,21 @@ const BADGE_SIZE_MAP = {
   [BadgeSize.Large]: 'text-sm leading-5 py-1 px-2.5'
 };
 
+const BADGE_VARIANT_MAP = {
+  [BadgeVariant.Neutral]: 'text-neutral-600 bg-gray-50 border-neutral-200',
+  [BadgeVariant.Error]: 'text-neutral-600 bg-gray-50 border-neutral-200',
+  [BadgeVariant.Warning]: 'text-neutral-600 bg-gray-50 border-neutral-200',
+  [BadgeVariant.Successs]: 'text-neutral-600 bg-gray-50 border-neutral-200',
+  [BadgeVariant.Brand]: 'text-neutral-600 bg-gray-50 border-neutral-200'
+};
+
 export const Badge = ({
   size = BadgeSize.Medium,
   variant = BadgeVariant.Neutral,
   children
 }: BadgeProps) => {
   return (
-    <span
-      className={cn(
-        'rounded-full border border-neutral-200 text-neutral-600',
-        BADGE_SIZE_MAP[size]
-      )}
-    >
+    <span className={cn('rounded-full border', BADGE_SIZE_MAP[size], BADGE_VARIANT_MAP[variant])}>
       {children}
     </span>
   );
