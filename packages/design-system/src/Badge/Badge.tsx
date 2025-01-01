@@ -18,9 +18,9 @@ export enum BadgeVariant {
 }
 
 const BADGE_SIZE_MAP = {
-  [BadgeSize.Small]: 'text-xs leading-4 py-0.5 px-1.5',
-  [BadgeSize.Medium]: 'text-sm leading-5 py-0.5 px-2',
-  [BadgeSize.Large]: 'text-sm leading-5 py-1 px-2.5'
+  [BadgeSize.Small]: 'h-5 text-xs leading-4 py-px px-[0.3125rem]',
+  [BadgeSize.Medium]: 'h-6 text-sm leading-5 py-px px-[0.4375rem]',
+  [BadgeSize.Large]: 'h-7 text-sm leading-5 py-[0.1875rem] px-[0.5625rem]'
 };
 
 const BADGE_VARIANT_MAP = {
@@ -48,7 +48,7 @@ export const Badge = ({
   return (
     <span
       className={cn(
-        'inline-block rounded-full border',
+        'inline-flex items-center rounded-full border',
         BADGE_SIZE_MAP[size],
         BADGE_VARIANT_MAP[variant],
         className
