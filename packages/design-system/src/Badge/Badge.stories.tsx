@@ -5,7 +5,22 @@ import { Badge, BadgeProps, BadgeSize, BadgeVariant } from './Badge.tsx';
 const meta = {
   title: 'Design System/Components/Badge',
   component: Badge,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    size: {
+      options: Object.values(BadgeSize),
+      control: { type: 'select' },
+      defaultValue: BadgeSize.Medium
+    },
+    variant: {
+      options: Object.values(BadgeVariant),
+      control: { type: 'select' },
+      defaultValue: BadgeVariant.Neutral
+    }
+  },
+  parameters: {
+    controls: { exclude: ['className'] }
+  }
 } satisfies Meta<BadgeProps>;
 
 export default meta;
