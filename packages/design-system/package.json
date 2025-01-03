@@ -19,6 +19,7 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@storybook/react": "^8.4.7",
     "@testing-library/jest-dom": "^6.6.3",
