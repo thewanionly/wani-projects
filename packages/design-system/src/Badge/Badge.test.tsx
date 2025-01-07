@@ -11,7 +11,6 @@ describe('Badge', () => {
     render(<Neutral />);
 
     // ACT
-
     // ASSERT
     expect(screen.getByText(Neutral.args.children as string)).toBeInTheDocument();
   });
