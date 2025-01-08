@@ -9,7 +9,10 @@ export const Button = ({ className, label, ...props }: ButtonProps) => {
   return (
     <button
       type="button"
-      className={cn('rounded bg-indigo-700 px-3.5 py-2.5 text-sm text-white', className)}
+      className={cn(
+        'rounded bg-indigo-700 px-3.5 py-2.5 text-sm text-white shadow hover:bg-indigo-800 focus:bg-indigo-800 focus:shadow-buttonFocusRing focus-visible:outline-none motion-safe:transition-colors',
+        className
+      )}
       {...props}
     >
       {label}
