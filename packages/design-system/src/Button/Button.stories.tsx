@@ -23,7 +23,7 @@ export const Primary: Story = {
 
 export const PrimaryDisabled: Story = {
   args: {
-    label: 'Primary',
+    label: 'Primary Disabled',
     disabled: true,
   },
 };
