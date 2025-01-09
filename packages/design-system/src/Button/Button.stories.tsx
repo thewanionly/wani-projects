@@ -20,3 +20,10 @@ export const Primary: Story = {
     label: 'Primary',
   },
 };
+
+export const PrimaryDisabled: Story = {
+  args: {
+    label: 'Primary',
+    disabled: true,
+  },
+};

@@ -1,6 +1,6 @@
 import { cn } from '../utils/styling.ts';
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   label?: string;
 }
