@@ -1,4 +1,6 @@
 import { render, screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
+
 import { composeStories } from '@storybook/react';
 
 import * as stories from './Button.stories.tsx';
@@ -33,5 +35,18 @@ describe('Button', () => {
     // ASSERT
     const buttonEl = screen.getByRole('button');
     expect(buttonEl).toBeDisabled();
+  });
+
+  it('executes the function passed in the `onClick` prop when button is clicked', async () => {
+    // ARRANGE
+    const onClickHandler = jest.fn();
+    render(<Primary onClick={onClickHandler} />);
+
+    // ACT
+    const btnElement = screen.getByRole('button');
+    await userEvent.click(btnElement);
+
+    // ASSERT
+    expect(onClickHandler).toHaveBeenCalled();
   });
 });
