@@ -1,8 +1,26 @@
 import { cn } from '../utils/styling.ts';
 
+export enum ButtonVariant {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Tertiary = 'tertiary',
+  LinkColor = 'linkColor',
+  LinkGray = 'linkGray',
+  Destructive = 'destructive',
+}
+
+export enum ButtonSize {
+  Medium = 'medium',
+  Large = 'large',
+  ExtraLarge = 'extra_large',
+  ExtraLarge2 = 'extra_large_2',
+}
+
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   label?: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 export const Button = ({ className, label, ...props }: ButtonProps) => {
