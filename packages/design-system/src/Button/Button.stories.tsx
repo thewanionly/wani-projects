@@ -34,7 +34,22 @@ export const Primary: Story = {
 
 export const PrimaryDisabled: Story = {
   args: {
-    label: 'Primary Disabled',
+    label: 'Primary (Disabled)',
+    disabled: true,
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    label: 'Secondary',
+    variant: ButtonVariant.Secondary,
+  },
+};
+
+export const SecondaryDisabled: Story = {
+  args: {
+    label: 'Secondary (Disabled)',
+    variant: ButtonVariant.Secondary,
     disabled: true,
   },
 };
