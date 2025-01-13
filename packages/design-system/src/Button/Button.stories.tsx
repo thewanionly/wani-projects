@@ -53,3 +53,18 @@ export const SecondaryDisabled: Story = {
     disabled: true,
   },
 };
+
+export const Destructive: Story = {
+  args: {
+    label: 'Destructive',
+    variant: ButtonVariant.Destructive,
+  },
+};
+
+export const DestructiveDisabled: Story = {
+  args: {
+    label: 'Destructive (Disabled)',
+    variant: ButtonVariant.Destructive,
+    disabled: true,
+  },
+};

@@ -39,7 +39,12 @@ const BUTTON_VARIANT_MAP = {
   [ButtonVariant.Tertiary]: ``,
   [ButtonVariant.LinkColor]: ``,
   [ButtonVariant.LinkGray]: ``,
-  [ButtonVariant.Destructive]: ``,
+  [ButtonVariant.Destructive]: `
+    bg-red-600 text-white shadow font-medium
+    hover:bg-red-700
+    focus:bg-red-700 focus:shadow-destructiveBtnFocusRing focus-visible:outline-none
+    disabled:bg-neutral-100 disabled:text-neutral-400 disabled:shadow-none
+  `,
 };
 
 export const Button = ({
