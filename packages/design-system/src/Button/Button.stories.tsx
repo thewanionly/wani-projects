@@ -1,12 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonProps } from './Button.tsx';
+import { Button, ButtonProps, ButtonSize, ButtonVariant } from './Button.tsx';
 
 const meta = {
   title: 'Design System/Components/Button',
   component: Button,
   tags: ['autodocs'],
-
+  argTypes: {
+    size: {
+      options: Object.values(ButtonSize),
+      control: { type: 'select' },
+      defaultValue: ButtonSize.Medium,
+    },
+    variant: {
+      options: Object.values(ButtonVariant),
+      control: { type: 'select' },
+      defaultValue: ButtonVariant.Primary,
+    },
+  },
   parameters: {
     controls: { exclude: ['className'] },
   },
