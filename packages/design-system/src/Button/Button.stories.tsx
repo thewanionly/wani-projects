@@ -69,6 +69,36 @@ export const TertiaryDisabled: Story = {
   },
 };
 
+export const LinkColor: Story = {
+  args: {
+    label: 'Link Color',
+    variant: ButtonVariant.LinkColor,
+  },
+};
+
+export const LinkColorDisabled: Story = {
+  args: {
+    label: 'Link Color (Disabled)',
+    variant: ButtonVariant.LinkColor,
+    disabled: true,
+  },
+};
+
+export const LinkGray: Story = {
+  args: {
+    label: 'Link Gray',
+    variant: ButtonVariant.LinkGray,
+  },
+};
+
+export const LinkGrayDisabled: Story = {
+  args: {
+    label: 'Link Gray (Disabled)',
+    variant: ButtonVariant.LinkGray,
+    disabled: true,
+  },
+};
+
 export const Destructive: Story = {
   args: {
     label: 'Destructive',

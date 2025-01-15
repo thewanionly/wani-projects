@@ -42,8 +42,18 @@ const BUTTON_VARIANT_MAP = {
     focus:bg-neutral-50 focus:shadow-buttonFocusRing focus-visible:outline-none
     disabled:bg-transparent disabled:text-neutral-400 disabled:shadow-none
   `,
-  [ButtonVariant.LinkColor]: ``,
-  [ButtonVariant.LinkGray]: ``,
+  [ButtonVariant.LinkColor]: `
+    rounded-none bg-transparent p-0 text-indigo-700
+    hover:text-indigo-800
+    focus:text-indigo-800 focus:rounded focus:outline-none focus:shadow-buttonFocusRing
+    disabled:bg-transparent disabled:text-neutral-400 disabled:shadow-none
+  `,
+  [ButtonVariant.LinkGray]: `
+    rounded-none bg-transparent p-0 text-neutral-600
+    hover:text-neutral-900
+    focus:text-neutral-900 focus:rounded focus:outline-none focus:shadow-buttonFocusRing
+    disabled:bg-transparent disabled:text-neutral-400 disabled:shadow-none
+  `,
   [ButtonVariant.Destructive]: `
     bg-red-600 text-white shadow
     hover:bg-red-700
@@ -71,8 +81,8 @@ export const Button = ({
       type="button"
       className={cn(
         'rounded font-medium motion-safe:transition-colors',
-        BUTTON_VARIANT_MAP[variant],
         BUTTON_SIZE_MAP[size],
+        BUTTON_VARIANT_MAP[variant],
         className
       )}
       {...props}
