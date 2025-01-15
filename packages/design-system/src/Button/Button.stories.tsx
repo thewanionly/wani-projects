@@ -68,3 +68,31 @@ export const DestructiveDisabled: Story = {
     disabled: true,
   },
 };
+
+export const Medium: Story = {
+  args: {
+    label: 'Medium',
+    size: ButtonSize.Medium,
+  },
+};
+
+export const Large: Story = {
+  args: {
+    label: 'Large',
+    size: ButtonSize.Large,
+  },
+};
+
+export const ExtraLarge: Story = {
+  args: {
+    label: 'Extra Large',
+    size: ButtonSize.ExtraLarge,
+  },
+};
+
+export const ExtraLarge2: Story = {
+  args: {
+    label: 'Extra Large 2',
+    size: ButtonSize.ExtraLarge2,
+  },
+};

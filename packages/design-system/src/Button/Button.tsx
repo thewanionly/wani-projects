@@ -47,10 +47,18 @@ const BUTTON_VARIANT_MAP = {
   `,
 };
 
+const BUTTON_SIZE_MAP = {
+  [ButtonSize.Medium]: 'text-sm px-3.5 py-2.5',
+  [ButtonSize.Large]: 'text-base px-4 py-2.5',
+  [ButtonSize.ExtraLarge]: 'text-base px-5 py-3',
+  [ButtonSize.ExtraLarge2]: 'text-lg px-6 py-4',
+};
+
 export const Button = ({
   className,
   label,
   variant = ButtonVariant.Primary,
+  size = ButtonSize.Medium,
   ...props
 }: ButtonProps) => {
   return (
@@ -59,7 +67,7 @@ export const Button = ({
       className={cn(
         'rounded motion-safe:transition-colors',
         BUTTON_VARIANT_MAP[variant],
-        'px-3.5 py-2.5 text-sm',
+        BUTTON_SIZE_MAP[size],
         className
       )}
       {...props}
