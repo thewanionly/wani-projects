@@ -25,22 +25,27 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const BUTTON_VARIANT_MAP = {
   [ButtonVariant.Primary]: `
-    bg-indigo-700 text-white shadow font-medium
+    bg-indigo-700 text-white shadow
     hover:bg-indigo-800
     focus:bg-indigo-800 focus:shadow-buttonFocusRing focus-visible:outline-none
     disabled:bg-neutral-100 disabled:text-neutral-400 disabled:shadow-none
   `,
   [ButtonVariant.Secondary]: `
-    bg-white outline outline-[0.5px] outline-neutral-200 text-neutral-900 shadow font-medium
+    bg-white outline outline-[0.5px] outline-neutral-200 text-neutral-900 shadow
     hover:bg-neutral-50 hover:text-neutral-950 hover:outline-1
     focus:bg-neutral-50 focus:text-neutral-950 focus:outline-1 focus:shadow-buttonFocusRing
     disabled:bg-neutral-100 disabled:text-neutral-400 disabled:shadow-none disabled:outline-none
   `,
-  [ButtonVariant.Tertiary]: ``,
+  [ButtonVariant.Tertiary]: `
+    bg-transparent text-indigo-700
+    hover:bg-neutral-50
+    focus:bg-neutral-50 focus:shadow-buttonFocusRing focus-visible:outline-none
+    disabled:bg-transparent disabled:text-neutral-400 disabled:shadow-none
+  `,
   [ButtonVariant.LinkColor]: ``,
   [ButtonVariant.LinkGray]: ``,
   [ButtonVariant.Destructive]: `
-    bg-red-600 text-white shadow font-medium
+    bg-red-600 text-white shadow
     hover:bg-red-700
     focus:bg-red-700 focus:shadow-destructiveBtnFocusRing focus-visible:outline-none
     disabled:bg-neutral-100 disabled:text-neutral-400 disabled:shadow-none
@@ -65,7 +70,7 @@ export const Button = ({
     <button
       type="button"
       className={cn(
-        'rounded motion-safe:transition-colors',
+        'rounded font-medium motion-safe:transition-colors',
         BUTTON_VARIANT_MAP[variant],
         BUTTON_SIZE_MAP[size],
         className

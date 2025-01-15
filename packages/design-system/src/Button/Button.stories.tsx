@@ -54,6 +54,21 @@ export const SecondaryDisabled: Story = {
   },
 };
 
+export const Tertiary: Story = {
+  args: {
+    label: 'Tertiary',
+    variant: ButtonVariant.Tertiary,
+  },
+};
+
+export const TertiaryDisabled: Story = {
+  args: {
+    label: 'Tertiary (Disabled)',
+    variant: ButtonVariant.Tertiary,
+    disabled: true,
+  },
+};
+
 export const Destructive: Story = {
   args: {
     label: 'Destructive',
