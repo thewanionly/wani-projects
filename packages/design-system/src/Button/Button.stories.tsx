@@ -28,27 +28,27 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: 'Primary',
+    children: 'Primary',
   },
 };
 
 export const PrimaryDisabled: Story = {
   args: {
-    label: 'Primary (Disabled)',
+    children: 'Primary (Disabled)',
     disabled: true,
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Secondary',
+    children: 'Secondary',
     variant: ButtonVariant.Secondary,
   },
 };
 
 export const SecondaryDisabled: Story = {
   args: {
-    label: 'Secondary (Disabled)',
+    children: 'Secondary (Disabled)',
     variant: ButtonVariant.Secondary,
     disabled: true,
   },
@@ -56,14 +56,14 @@ export const SecondaryDisabled: Story = {
 
 export const Tertiary: Story = {
   args: {
-    label: 'Tertiary',
+    children: 'Tertiary',
     variant: ButtonVariant.Tertiary,
   },
 };
 
 export const TertiaryDisabled: Story = {
   args: {
-    label: 'Tertiary (Disabled)',
+    children: 'Tertiary (Disabled)',
     variant: ButtonVariant.Tertiary,
     disabled: true,
   },
@@ -71,14 +71,14 @@ export const TertiaryDisabled: Story = {
 
 export const LinkColor: Story = {
   args: {
-    label: 'Link Color',
+    children: 'Link Color',
     variant: ButtonVariant.LinkColor,
   },
 };
 
 export const LinkColorDisabled: Story = {
   args: {
-    label: 'Link Color (Disabled)',
+    children: 'Link Color (Disabled)',
     variant: ButtonVariant.LinkColor,
     disabled: true,
   },
@@ -86,14 +86,14 @@ export const LinkColorDisabled: Story = {
 
 export const LinkGray: Story = {
   args: {
-    label: 'Link Gray',
+    children: 'Link Gray',
     variant: ButtonVariant.LinkGray,
   },
 };
 
 export const LinkGrayDisabled: Story = {
   args: {
-    label: 'Link Gray (Disabled)',
+    children: 'Link Gray (Disabled)',
     variant: ButtonVariant.LinkGray,
     disabled: true,
   },
@@ -101,14 +101,14 @@ export const LinkGrayDisabled: Story = {
 
 export const Destructive: Story = {
   args: {
-    label: 'Destructive',
+    children: 'Destructive',
     variant: ButtonVariant.Destructive,
   },
 };
 
 export const DestructiveDisabled: Story = {
   args: {
-    label: 'Destructive (Disabled)',
+    children: 'Destructive (Disabled)',
     variant: ButtonVariant.Destructive,
     disabled: true,
   },
@@ -116,28 +116,28 @@ export const DestructiveDisabled: Story = {
 
 export const Medium: Story = {
   args: {
-    label: 'Medium',
+    children: 'Medium',
     size: ButtonSize.Medium,
   },
 };
 
 export const Large: Story = {
   args: {
-    label: 'Large',
+    children: 'Large',
     size: ButtonSize.Large,
   },
 };
 
 export const ExtraLarge: Story = {
   args: {
-    label: 'Extra Large',
+    children: 'Extra Large',
     size: ButtonSize.ExtraLarge,
   },
 };
 
 export const ExtraLarge2: Story = {
   args: {
-    label: 'Extra Large 2',
+    children: 'Extra Large 2',
     size: ButtonSize.ExtraLarge2,
   },
 };

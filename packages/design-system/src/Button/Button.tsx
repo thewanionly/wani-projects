@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { cn } from '../utils/styling.ts';
 
 export enum ButtonVariant {
@@ -18,7 +19,7 @@ export enum ButtonSize {
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  label?: string;
+  children?: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
 }
@@ -71,7 +72,7 @@ const BUTTON_SIZE_MAP = {
 
 export const Button = ({
   className,
-  label,
+  children,
   variant = ButtonVariant.Primary,
   size = ButtonSize.Medium,
   ...props
@@ -87,7 +88,7 @@ export const Button = ({
       )}
       {...props}
     >
-      {label}
+      {children}
     </button>
   );
 };

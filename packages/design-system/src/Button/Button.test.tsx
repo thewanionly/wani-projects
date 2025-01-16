@@ -24,7 +24,7 @@ describe('Button', () => {
 
     // ACT
     // ASSERT
-    expect(screen.getByText(Primary.args.label as string)).toBeInTheDocument();
+    expect(screen.getByText(Primary.args.children as string)).toBeInTheDocument();
   });
 
   it(`displays a disabled button`, async () => {
