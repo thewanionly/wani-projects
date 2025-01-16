@@ -22,6 +22,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   children?: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  iconOnly?: boolean;
 }
 
 const BUTTON_VARIANT_MAP = {
@@ -70,19 +71,27 @@ const BUTTON_SIZE_MAP = {
   [ButtonSize.ExtraLarge2]: 'text-lg px-6 py-4',
 };
 
+const ICON_BUTTON_SIZE_MAP = {
+  [ButtonSize.Medium]: 'p-2.5',
+  [ButtonSize.Large]: 'p-3',
+  [ButtonSize.ExtraLarge]: 'p-3.5',
+  [ButtonSize.ExtraLarge2]: 'p-4',
+};
+
 export const Button = ({
   className,
   children,
   variant = ButtonVariant.Primary,
   size = ButtonSize.Medium,
+  iconOnly = false,
   ...props
 }: ButtonProps) => {
   return (
     <button
       type="button"
       className={cn(
-        'rounded font-medium motion-safe:transition-colors',
-        BUTTON_SIZE_MAP[size],
+        'flex items-center gap-1 rounded font-medium motion-safe:transition-colors',
+        iconOnly ? ICON_BUTTON_SIZE_MAP[size] : BUTTON_SIZE_MAP[size],
         BUTTON_VARIANT_MAP[variant],
         className
       )}

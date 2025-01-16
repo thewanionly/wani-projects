@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button, ButtonProps, ButtonSize, ButtonVariant } from './Button.tsx';
+import { Star } from 'lucide-react';
 
 const meta = {
   title: 'Design System/Components/Button',
@@ -17,9 +18,12 @@ const meta = {
       control: { type: 'select' },
       defaultValue: ButtonVariant.Primary,
     },
+    disabled: {
+      control: 'boolean',
+    },
   },
   parameters: {
-    controls: { exclude: ['className'] },
+    controls: { exclude: ['className', 'iconOnly'] },
   },
 } satisfies Meta<ButtonProps>;
 
@@ -139,5 +143,64 @@ export const ExtraLarge2: Story = {
   args: {
     children: 'Extra Large 2',
     size: ButtonSize.ExtraLarge2,
+  },
+};
+
+export const IconButton: Story = {
+  args: {
+    children: <Star size={20} />,
+    iconOnly: true,
+  },
+  parameters: {
+    controls: { exclude: ['children', 'className'] },
+  },
+};
+
+export const TextWithLeftIcon: Story = {
+  args: {
+    className: 'gap-2',
+    children: (
+      <>
+        <Star size={20} />
+        Icon Button
+      </>
+    ),
+    iconOnly: true,
+  },
+  parameters: {
+    controls: { exclude: ['children', 'className'] },
+  },
+};
+
+export const TextWithRightIcon: Story = {
+  args: {
+    className: 'gap-2',
+    children: (
+      <>
+        Icon Button
+        <Star size={20} />
+      </>
+    ),
+    iconOnly: true,
+  },
+  parameters: {
+    controls: { exclude: ['children', 'className'] },
+  },
+};
+
+export const TextWithLeftAndRightIcons: Story = {
+  args: {
+    className: 'gap-2',
+    children: (
+      <>
+        <Star size={20} />
+        Icon Button
+        <Star size={20} />
+      </>
+    ),
+    iconOnly: true,
+  },
+  parameters: {
+    controls: { exclude: ['children', 'className'] },
   },
 };
