@@ -150,6 +150,7 @@ export const IconButton: Story = {
   args: {
     children: <Star size={20} />,
     iconOnly: true,
+    'aria-label': 'Star Icon',
   },
   parameters: {
     controls: { exclude: ['children', 'className'] },
