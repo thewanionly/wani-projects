@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import { cn } from '../utils/styling.ts';
 
 export enum ButtonVariant {
@@ -78,16 +78,20 @@ const ICON_BUTTON_SIZE_MAP = {
   [ButtonSize.ExtraLarge2]: 'p-4',
 };
 
-export const Button = ({
-  className,
-  children,
-  variant = ButtonVariant.Primary,
-  size = ButtonSize.Medium,
-  iconOnly = false,
-  ...props
-}: ButtonProps) => {
-  return (
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      children,
+      variant = ButtonVariant.Primary,
+      size = ButtonSize.Medium,
+      iconOnly = false,
+      ...props
+    },
+    ref
+  ) => (
     <button
+      ref={ref}
       type="button"
       className={cn(
         'flex items-center gap-1 rounded font-medium motion-safe:transition-colors',
@@ -99,5 +103,9 @@ export const Button = ({
     >
       {children}
     </button>
-  );
-};
+  )
+);
+
+Button.displayName = 'Button';
+
+export { Button };
