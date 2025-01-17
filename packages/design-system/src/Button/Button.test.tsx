@@ -5,7 +5,7 @@ import { composeStories } from '@storybook/react';
 
 import * as stories from './Button.stories.tsx';
 
-const { Primary, PrimaryDisabled } = composeStories(stories);
+const { Primary, PrimaryDisabled, IconButton } = composeStories(stories);
 
 describe('Button', () => {
   it('displays Button component', async () => {
@@ -35,6 +35,21 @@ describe('Button', () => {
     // ASSERT
     const buttonEl = screen.getByRole('button');
     expect(buttonEl).toBeDisabled();
+  });
+
+  it(`displays an Icon Button`, async () => {
+    render(<IconButton />);
+
+    // Find the button
+    const buttonEl = screen.getByRole('button', { name: IconButton.args['aria-label'] });
+    expect(buttonEl).toBeInTheDocument();
+
+    // Find the icon
+    const icon = screen.getByTestId('icon');
+    expect(icon).toBeInTheDocument();
+
+    // Check that the icon is inside the button
+    expect(buttonEl).toContainElement(icon);
   });
 
   it('executes the function passed in the `onClick` prop when button is clicked', async () => {
