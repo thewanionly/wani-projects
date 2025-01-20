@@ -6,6 +6,10 @@ import * as stories from './Input.stories.tsx';
 
 const { Default } = composeStories(stories);
 
+jest.mock('lucide-react', () => ({
+  CircleHelp: () => <div data-testid="icon">Star Icon</div>,
+}));
+
 describe('Input', () => {
   it(`displays input's label`, async () => {
     render(<Default />);

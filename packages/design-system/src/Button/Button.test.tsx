@@ -7,6 +7,10 @@ import * as stories from './Button.stories.tsx';
 
 const { Primary, PrimaryDisabled, IconButton } = composeStories(stories);
 
+jest.mock('lucide-react', () => ({
+  Star: () => <div data-testid="icon">Star Icon</div>,
+}));
+
 describe('Button', () => {
   it('displays Button component', async () => {
     // ARRANGE
