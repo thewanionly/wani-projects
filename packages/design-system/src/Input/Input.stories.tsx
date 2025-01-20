@@ -19,5 +19,7 @@ export const Default: Story = {
   args: {
     placeholder: 'name@email.com',
     type: 'email',
+    id: 'email',
+    label: 'Email',
   },
 };
