@@ -21,5 +21,6 @@ export const Default: Story = {
     type: 'email',
     id: 'email',
     label: 'Email',
+    hint: 'This is a hint text',
   },
 };

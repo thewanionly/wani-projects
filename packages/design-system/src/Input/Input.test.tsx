@@ -25,4 +25,11 @@ describe('Input', () => {
     const inputElByLabel = screen.getByLabelText(Default.args.label as string);
     expect(inputElByLabel).toBeInTheDocument();
   });
+
+  it('displays hint text', async () => {
+    render(<Default />);
+
+    const hint = screen.getByText(Default.args.hint as string);
+    expect(hint).toBeInTheDocument();
+  });
 });
