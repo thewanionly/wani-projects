@@ -19,8 +19,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {label}
         </label>
       )}
-      <div className="flex w-full justify-between gap-2 rounded border border-neutral-200 bg-neutral-50 px-3.5 py-2.5 motion-safe:transition-colors">
-        <input ref={ref} id={id} className="flex-1" {...props} />
+      <div
+        className={cn(
+          'flex w-full justify-between gap-2 rounded border border-neutral-200 bg-neutral-50 px-3.5 py-2.5 motion-safe:transition-colors',
+          'focus-within:border-indigo-700'
+        )}
+      >
+        <input
+          ref={ref}
+          id={id}
+          className="flex-1 bg-neutral-50 text-neutral-900 placeholder:text-neutral-500 focus:outline-none"
+          {...props}
+        />
         <CircleHelp />
       </div>
       {hint && <p>{hint}</p>}
