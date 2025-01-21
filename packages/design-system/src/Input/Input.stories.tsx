@@ -43,7 +43,7 @@ export const DefaultFilled: Story = {
     id: 'email',
     label: 'Email',
     hint: 'This is a hint text',
-    value: 'myemail@emai.com',
+    defaultValue: 'myemail@email.com',
   },
 };
 
@@ -54,7 +54,18 @@ export const DefaultFilledDisabled: Story = {
     id: 'email',
     label: 'Email',
     hint: 'This is a hint text',
-    value: 'myemail@email.com',
+    defaultValue: 'myemail@email.com',
     disabled: true,
+  },
+};
+
+export const DefaultError: Story = {
+  args: {
+    placeholder: 'name@email.com',
+    type: 'email',
+    id: 'email',
+    label: 'Email',
+    hint: 'This is a hint text',
+    errorMessage: 'This is an error message',
   },
 };
