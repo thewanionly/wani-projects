@@ -7,7 +7,7 @@ export interface InputProps extends React.ComponentProps<'input'> {
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, id, label, hint, ...props }, ref) => (
+  ({ className, id, label, hint, disabled, ...props }, ref) => (
     <div
       className={cn(
         'flex flex-col items-start gap-1.5 text-sm font-normal text-neutral-500',
@@ -22,13 +22,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <div
         className={cn(
           'flex w-full justify-between gap-2 rounded border border-neutral-200 bg-neutral-50 px-3.5 py-2.5 motion-safe:transition-colors',
-          'focus-within:border-indigo-700'
+          'focus-within:border-indigo-700 focus-within:shadow-buttonFocusRing',
+          disabled && 'border-neutral-100'
         )}
       >
         <input
           ref={ref}
           id={id}
-          className="flex-1 bg-neutral-50 text-neutral-900 placeholder:text-neutral-500 focus:outline-none"
+          className={cn(
+            'flex-1 bg-neutral-50 text-neutral-900 placeholder:text-neutral-500 focus:outline-none',
+            disabled && 'text-neutral-500 placeholder:text-neutral-400'
+          )}
+          disabled={disabled}
           {...props}
         />
         <CircleHelp />
