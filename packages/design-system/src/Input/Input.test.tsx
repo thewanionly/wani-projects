@@ -1,13 +1,14 @@
 import { render, screen } from '@testing-library/react';
-
 import { composeStories } from '@storybook/react';
+import { Mail } from 'lucide-react';
 
 import * as stories from './Input.stories.tsx';
 
-const { Default, DefaultDisabled, DefaultError } = composeStories(stories);
+const { Default, DefaultDisabled, DefaultError, IconLeading } = composeStories(stories);
 
 jest.mock('lucide-react', () => ({
   CircleHelp: () => <div data-testid="help-icon">Help Icon</div>,
+  Mail: () => <div data-testid="email-icon">E-Mail Icon</div>,
 }));
 
 describe('Input', () => {
@@ -56,5 +57,12 @@ describe('Input', () => {
 
     const errorMessage = screen.getByText(DefaultError.args.errorMessage as string);
     expect(errorMessage).toBeInTheDocument();
+  });
+
+  it('displays leading icon', async () => {
+    render(<IconLeading />);
+
+    const icon = screen.getByTestId('email-icon');
+    expect(icon).toBeInTheDocument();
   });
 });
