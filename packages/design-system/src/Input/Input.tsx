@@ -42,6 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               disabled && 'text-neutral-500 placeholder:text-neutral-400'
             )}
             disabled={disabled}
+            aria-describedby="bottom-text"
             {...props}
           />
           <CircleHelp
@@ -49,7 +50,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           />
         </div>
         {bottomText && (
-          <p className={cn(errorMessage ? 'text-red-600' : 'text-neutral-500')}>{bottomText}</p>
+          <p id="bottom-text" className={cn(errorMessage ? 'text-red-600' : 'text-neutral-500')}>
+            {bottomText}
+          </p>
         )}
       </div>
     );
