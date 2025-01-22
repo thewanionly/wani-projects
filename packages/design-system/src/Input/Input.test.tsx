@@ -4,10 +4,10 @@ import { composeStories } from '@storybook/react';
 
 import * as stories from './Input.stories.tsx';
 
-const { Default } = composeStories(stories);
+const { Default, DefaultDisabled, DefaultError } = composeStories(stories);
 
 jest.mock('lucide-react', () => ({
-  CircleHelp: () => <div data-testid="icon">Star Icon</div>,
+  CircleHelp: () => <div data-testid="help-icon">Help Icon</div>,
 }));
 
 describe('Input', () => {
@@ -35,5 +35,26 @@ describe('Input', () => {
 
     const hint = screen.getByText(Default.args.hint as string);
     expect(hint).toBeInTheDocument();
+  });
+
+  it('displays help icon', async () => {
+    render(<Default />);
+
+    const icon = screen.getByTestId('help-icon');
+    expect(icon).toBeInTheDocument();
+  });
+
+  it('displays a disabled input element', async () => {
+    render(<DefaultDisabled />);
+
+    const inputEl = screen.getByRole('textbox');
+    expect(inputEl).toBeDisabled();
+  });
+
+  it('displays error message', async () => {
+    render(<DefaultError />);
+
+    const errorMessage = screen.getByText(DefaultError.args.errorMessage as string);
+    expect(errorMessage).toBeInTheDocument();
   });
 });

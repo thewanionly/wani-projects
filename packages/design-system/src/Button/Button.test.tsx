@@ -8,7 +8,7 @@ import * as stories from './Button.stories.tsx';
 const { Primary, PrimaryDisabled, IconButton } = composeStories(stories);
 
 jest.mock('lucide-react', () => ({
-  Star: () => <div data-testid="icon">Star Icon</div>,
+  Star: () => <div data-testid="star-icon">Star Icon</div>,
 }));
 
 describe('Button', () => {
@@ -49,7 +49,7 @@ describe('Button', () => {
     expect(buttonEl).toBeInTheDocument();
 
     // Find the icon
-    const icon = screen.getByTestId('icon');
+    const icon = screen.getByTestId('star-icon');
     expect(icon).toBeInTheDocument();
 
     // Check that the icon is inside the button
