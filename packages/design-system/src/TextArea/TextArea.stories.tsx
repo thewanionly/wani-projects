@@ -23,3 +23,13 @@ export const Normal: Story = {
     maxLength: 500,
   },
 };
+
+export const Filled: Story = {
+  args: {
+    id: 'description',
+    label: 'Description',
+    placeholder: 'Write your message...',
+    defaultValue: 'Embedding iFrame using html',
+    maxLength: 500,
+  },
+};
