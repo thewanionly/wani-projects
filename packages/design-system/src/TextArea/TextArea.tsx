@@ -17,7 +17,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ label, id, ..
         className={cn(
           'h-[108px] resize-none rounded-lg border border-neutral-200 bg-neutral-50 px-3.5 py-3',
           'font-norma text-sm text-neutral-900',
-          'placeholder:text-neutral-500'
+          'placeholder:text-neutral-500',
+          'focus:border-indigo-700 focus:shadow-buttonFocusRing focus:outline-none'
         )}
         id={id}
         {...props}
