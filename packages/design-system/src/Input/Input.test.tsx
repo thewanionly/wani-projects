@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
-import { Mail } from 'lucide-react';
 
 import * as stories from './Input.stories.tsx';
 
@@ -29,6 +28,18 @@ describe('Input', () => {
     // input by label
     const inputElByLabel = screen.getByLabelText(Default.args.label as string);
     expect(inputElByLabel).toBeInTheDocument();
+  });
+
+  it('displays input element associated with the placeholder', async () => {
+    render(<Default />);
+
+    // input
+    const inputEl = screen.getByRole('textbox');
+    expect(inputEl).toBeInTheDocument();
+
+    // input by placeholder
+    const inputElPlaceholder = screen.getByPlaceholderText(Default.args.placeholder as string);
+    expect(inputElPlaceholder).toBeInTheDocument();
   });
 
   it('displays hint text', async () => {
