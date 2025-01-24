@@ -33,3 +33,24 @@ export const Filled: Story = {
     maxLength: 500,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    id: 'description',
+    label: 'Description',
+    placeholder: 'Write your message...',
+    maxLength: 500,
+    disabled: true,
+  },
+};
+
+export const DisabledFilled: Story = {
+  args: {
+    id: 'description',
+    label: 'Description',
+    placeholder: 'Write your message...',
+    defaultValue: 'Embedding iFrame using html',
+    maxLength: 500,
+    disabled: true,
+  },
+};

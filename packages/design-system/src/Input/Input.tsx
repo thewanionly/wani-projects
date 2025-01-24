@@ -39,7 +39,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             id={id}
             className={cn(
               'flex-1 bg-neutral-50 text-neutral-900 placeholder:text-neutral-500 focus:outline-none',
-              disabled && 'text-neutral-500 placeholder:text-neutral-400'
+              'disabled:text-neutral-500 disabled:placeholder:text-neutral-400'
             )}
             disabled={disabled}
             aria-describedby="bottom-text"
