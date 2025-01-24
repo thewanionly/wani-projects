@@ -54,3 +54,24 @@ export const DisabledFilled: Story = {
     disabled: true,
   },
 };
+
+export const Error: Story = {
+  args: {
+    id: 'description',
+    label: 'Description',
+    placeholder: 'Write your message...',
+    maxLength: 500,
+    errorMessage: 'This field is required',
+  },
+};
+
+export const ErrorFilled: Story = {
+  args: {
+    id: 'description',
+    label: 'Description',
+    placeholder: 'Write your message...',
+    defaultValue: 'Embedding iFrame using html',
+    maxLength: 500,
+    errorMessage: 'This is an error message',
+  },
+};

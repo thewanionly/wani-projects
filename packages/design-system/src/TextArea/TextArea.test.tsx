@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react';
 
 import * as stories from './TextArea.stories.tsx';
 
-const { Normal, Disabled } = composeStories(stories);
+const { Normal, Disabled, Error } = composeStories(stories);
 
 describe('TextArea', () => {
   it(`displays textarea's label`, async () => {
@@ -42,5 +42,12 @@ describe('TextArea', () => {
 
     const textArea = screen.getByRole('textbox');
     expect(textArea).toBeDisabled();
+  });
+
+  it('displays error message', async () => {
+    render(<Error />);
+
+    const errorMessage = screen.getByText(Error.args.errorMessage as string);
+    expect(errorMessage).toBeInTheDocument();
   });
 });
