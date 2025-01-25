@@ -47,7 +47,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <div className="flex flex-col gap-1.5">
         {label && (
-          <label className="text-sm font-medium text-neutral-700" htmlFor={id}>
+          <label className="self-start text-sm font-medium text-neutral-700" htmlFor={id}>
             {label}
           </label>
         )}
@@ -67,9 +67,12 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           onChange={handleOnChange}
           {...props}
           ref={innerRef}
+          aria-describedby="error-message"
         />
         <div className="flex justify-between">
-          <p className="text-sm font-normal text-red-600">{errorText}</p>
+          <p id="error-message" className="text-sm font-normal text-red-600">
+            {errorText}
+          </p>
           <p
             className={cn(
               'text-right text-sm font-normal text-neutral-500',
