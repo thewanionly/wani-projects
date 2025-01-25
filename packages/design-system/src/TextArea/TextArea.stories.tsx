@@ -75,3 +75,13 @@ export const ErrorFilled: Story = {
     errorMessage: 'This is an error message',
   },
 };
+
+export const CharLimitExceed: Story = {
+  args: {
+    id: 'description',
+    label: 'Description',
+    placeholder: 'Write your message...',
+    defaultValue: 'Char limit has exceeded. I am so sorry.',
+    maxLength: 30,
+  },
+};

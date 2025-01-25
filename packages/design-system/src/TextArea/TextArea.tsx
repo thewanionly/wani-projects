@@ -6,6 +6,8 @@ export interface TextAreaProps extends React.ComponentProps<'textarea'> {
   errorMessage?: string;
 }
 
+export const CHAR_LIMIT_EXCEEDED_MESSAGE = 'Character limit exceeded!';
+
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (
     { label, id, disabled, errorMessage, maxLength, value, defaultValue, onChange, ...props },
@@ -20,6 +22,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
       return 0;
     });
+
+    const charLimitExceeded = maxLength && charCount > maxLength;
+    const errorText = charLimitExceeded ? CHAR_LIMIT_EXCEEDED_MESSAGE : errorMessage;
 
     // The exposed `ref` will now contain the `innerRef.current` we declared inside this component
     useImperativeHandle(ref, () => innerRef.current!);
@@ -53,12 +58,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             'placeholder:text-neutral-500',
             'focus:border-indigo-700 focus:shadow-buttonFocusRing focus:outline-none',
             'disabled:border-neutral-100 disabled:text-neutral-500 disabled:placeholder:text-neutral-400',
-            errorMessage &&
-              'border-red-300 focus:border-red-600 focus:shadow-destructiveBtnFocusRing'
+            errorText && 'border-red-300 focus:border-red-600 focus:shadow-destructiveBtnFocusRing'
           )}
           id={id}
           disabled={disabled}
-          maxLength={maxLength}
           value={value}
           defaultValue={defaultValue}
           onChange={handleOnChange}
@@ -66,8 +69,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={innerRef}
         />
         <div className="flex justify-between">
-          <p className="text-sm font-normal text-red-600">{errorMessage}</p>
-          <p className="text-right text-sm font-normal text-neutral-500">
+          <p className="text-sm font-normal text-red-600">{errorText}</p>
+          <p
+            className={cn(
+              'text-right text-sm font-normal text-neutral-500',
+              charLimitExceeded && 'text-red-600'
+            )}
+          >
             <span data-testid="char-count">{charCount}</span>/
             <span data-testid="char-limit">{maxLength}</span>
           </p>

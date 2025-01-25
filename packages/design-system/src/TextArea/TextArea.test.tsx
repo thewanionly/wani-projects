@@ -3,7 +3,8 @@ import { composeStories } from '@storybook/react';
 
 import * as stories from './TextArea.stories.tsx';
 import { userEvent } from '@testing-library/user-event';
-const { Normal, Filled, Disabled, Error } = composeStories(stories);
+import { CHAR_LIMIT_EXCEEDED_MESSAGE } from './TextArea.tsx';
+const { Normal, Filled, Disabled, Error, CharLimitExceed } = composeStories(stories);
 
 describe('TextArea', () => {
   it(`displays textarea's label`, async () => {
@@ -89,11 +90,18 @@ describe('TextArea', () => {
     expect(errorMessage).toBeInTheDocument();
   });
 
-  xit(`displays error message when current char count exceeds char limit`, async () => {
-    // TODO:
-    render(<Normal />);
+  it(`displays error message when current char count exceeds char limit`, async () => {
+    render(<CharLimitExceed />);
 
-    const textArea = screen.getByRole('textbox');
-    expect(textArea).toBeDisabled();
+    const errorMessage = screen.getByText(CHAR_LIMIT_EXCEEDED_MESSAGE);
+    expect(errorMessage).toBeInTheDocument();
+  });
+
+  xit(`displays error message when user inputs a text that exceeds char limit`, async () => {
+    // TODO:
+    render(<CharLimitExceed />);
+
+    const charCount = screen.getByTestId('char-count');
+    expect(charCount.textContent).toBe(`${(Filled.args.defaultValue as string)?.length ?? ''}`);
   });
 });
