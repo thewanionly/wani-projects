@@ -38,6 +38,20 @@ describe('TextArea', () => {
     expect(textAreaByPlaceholder).toBeInTheDocument();
   });
 
+  it('displays a disabled textarea element', async () => {
+    render(<Disabled />);
+
+    const textArea = screen.getByRole('textbox');
+    expect(textArea).toBeDisabled();
+  });
+
+  it('displays error message', async () => {
+    render(<Error />);
+
+    const errorMessage = screen.getByText(Error.args.errorMessage as string);
+    expect(errorMessage).toBeInTheDocument();
+  });
+
   it(`displays char limit`, async () => {
     render(<Normal />);
 
@@ -76,20 +90,6 @@ describe('TextArea', () => {
     expect(charCountFinal.textContent).toBe(`${inputValue.length}`);
   });
 
-  it('displays a disabled textarea element', async () => {
-    render(<Disabled />);
-
-    const textArea = screen.getByRole('textbox');
-    expect(textArea).toBeDisabled();
-  });
-
-  it('displays error message', async () => {
-    render(<Error />);
-
-    const errorMessage = screen.getByText(Error.args.errorMessage as string);
-    expect(errorMessage).toBeInTheDocument();
-  });
-
   it(`displays error message when current char count exceeds char limit`, async () => {
     render(<CharLimitExceed />);
 
@@ -97,11 +97,37 @@ describe('TextArea', () => {
     expect(errorMessage).toBeInTheDocument();
   });
 
-  xit(`displays error message when user inputs a text that exceeds char limit`, async () => {
-    // TODO:
+  it(`displays error message when user inputs a text that exceeds char limit`, async () => {
     render(<CharLimitExceed />);
 
-    const charCount = screen.getByTestId('char-count');
-    expect(charCount.textContent).toBe(`${(Filled.args.defaultValue as string)?.length ?? ''}`);
+    // clear input
+    const textArea = screen.getByRole('textbox');
+    await userEvent.clear(textArea);
+
+    // initial
+    expect(screen.queryByText(CHAR_LIMIT_EXCEEDED_MESSAGE)).not.toBeInTheDocument();
+
+    // input to the text area
+    const inputValue = 'Hello world';
+    await userEvent.type(textArea, inputValue);
+
+    // assert error mesage is shown
+    expect(screen.getByText(CHAR_LIMIT_EXCEEDED_MESSAGE)).toBeInTheDocument();
+  });
+
+  it(`hides the error message when updates the input within char limit`, async () => {
+    render(<CharLimitExceed />);
+
+    // initial
+    expect(screen.getByText(CHAR_LIMIT_EXCEEDED_MESSAGE)).toBeInTheDocument();
+
+    // input to the text area
+    const textArea = screen.getByRole('textbox');
+    await userEvent.clear(textArea);
+    const inputValue = 'Hello';
+    await userEvent.type(textArea, inputValue);
+
+    // assert error mesage is not shown
+    expect(screen.queryByText(CHAR_LIMIT_EXCEEDED_MESSAGE)).not.toBeInTheDocument();
   });
 });

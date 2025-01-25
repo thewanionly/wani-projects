@@ -82,6 +82,6 @@ export const CharLimitExceed: Story = {
     label: 'Description',
     placeholder: 'Write your message...',
     defaultValue: 'Char limit has exceeded. I am so sorry.',
-    maxLength: 30,
+    maxLength: 10,
   },
 };
